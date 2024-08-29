@@ -26,6 +26,9 @@ app.use(
     },
   })
 );
+app.get('/', (req, res) => {
+  res.send('hello');
+});
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use(cookieParser());
 app.use(express.json());
