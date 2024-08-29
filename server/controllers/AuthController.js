@@ -1,7 +1,9 @@
 import jwt from "jsonwebtoken";
 import User from "../models/UserModel.js";
-import { compare } from "bcrypt";
+// import { compare } from "bcrypt";
+import pkg from "bcryptjs";
 import { renameSync, unlinkSync } from "fs";
+const { compare } = pkg;
 const maxAge = 3 * 24 * 60 * 1000;
 
 const createToken = (email, userId) => {
