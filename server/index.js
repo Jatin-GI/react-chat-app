@@ -20,6 +20,7 @@ app.use(
     origin: "https://react-chat-app-frontend-vc69.onrender.com",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
+     allowedHeaders: 'Content-Type,Authorization',
   })
 );
 app.use("/uploads/profiles", express.static("uploads/profiles"));
