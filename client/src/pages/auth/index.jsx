@@ -50,7 +50,7 @@ const Auth = () => {
       const response = await apiClient.post(
         LOGIN_ROUTE,
         { email, password },
-        { withCredentials: true }
+        { withCredentials: false }
       );
       // if (statuscode === 400) {
       //   console.log("nopes");
@@ -74,7 +74,7 @@ const Auth = () => {
       const response = await apiClient.post(
         SIGNUP_ROUTES,
         { email, password },
-        { withCredentials: true }
+        { withCredentials: false }
       );
       console.log({ response });
       navigate("/login");
