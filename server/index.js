@@ -17,7 +17,7 @@ const databaseURL = process.env.DATABASE_URL;
 
 app.use(
   cors({
-    origin: "https://react-chat-app-frontend-vc69.onrender.com",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
      allowedHeaders: 'Content-Type,Authorization',
