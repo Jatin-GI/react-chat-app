@@ -16,15 +16,7 @@ const port = process.env.PORT || 3001;
 const databaseURL = process.env.DATABASE_URL;
 
 app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
-     allowedHeaders: 'Content-Type,Authorization',
-    headers:{
-      "Access-Control-Allow-Origin":'https://react-chat-app-frontend-vc69.onrender.com',
-    },
-  })
+  cors()
 );
 app.get('/', (req, res) => {
   res.send('hello');
