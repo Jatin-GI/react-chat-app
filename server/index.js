@@ -15,15 +15,11 @@ const app = express();
 const port = process.env.PORT || 3001;
 const databaseURL = process.env.DATABASE_URL;
 
-const corsOptions = {
-  origin: 'https://react-chat-app-frontend-vc69.onrender.com', // Replace with your frontend URL
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
-};
-
-app.use(cors(corsOptions));
-app.get('/', (req, res) => {
-  res.send('hello');
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://react-chat-app-frontend-vc69.onrender.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
 });
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use(cookieParser());
