@@ -21,6 +21,9 @@ app.use(
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
      allowedHeaders: 'Content-Type,Authorization',
+    headers:{
+      "Access-Control-Allow-Origin":'https://react-chat-app-frontend-vc69.onrender.com',
+    },
   })
 );
 app.use("/uploads/profiles", express.static("uploads/profiles"));
