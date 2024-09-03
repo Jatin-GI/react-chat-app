@@ -3,12 +3,17 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 export default defineConfig({
+  plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://react-chat-app-xgww.onrender.com', 
-    }
+      // Proxy requests from /api to the backend server
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
-  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
