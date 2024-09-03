@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   server: {
     proxy: {
-      '/api': 'https:localhost:8080', 
+      '/api': 'https://react-chat-app-xgww.onrender.com', 
     }
   },
   plugins: [react()],
